@@ -35,15 +35,16 @@
             // listSong
             // 
             listSong.FormattingEnabled = true;
-            listSong.Location = new Point(12, 12);
+            listSong.Location = new Point(12, 22);
             listSong.Name = "listSong";
             listSong.Size = new Size(587, 319);
             listSong.TabIndex = 0;
             listSong.SelectedIndexChanged += OnChanged;
+            listSong.DoubleClick += OnYouTube;
             // 
             // txtTitle
             // 
-            txtTitle.Location = new Point(12, 337);
+            txtTitle.Location = new Point(12, 347);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(261, 23);
             txtTitle.TabIndex = 1;
@@ -51,7 +52,7 @@
             // 
             // txtArtist
             // 
-            txtArtist.Location = new Point(279, 337);
+            txtArtist.Location = new Point(279, 347);
             txtArtist.Name = "txtArtist";
             txtArtist.Size = new Size(107, 23);
             txtArtist.TabIndex = 2;
@@ -59,7 +60,7 @@
             // 
             // txtRating
             // 
-            txtRating.Location = new Point(392, 337);
+            txtRating.Location = new Point(392, 347);
             txtRating.MaxLength = 1;
             txtRating.Name = "txtRating";
             txtRating.Size = new Size(107, 23);
@@ -68,7 +69,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(505, 337);
+            btnAdd.Location = new Point(505, 347);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 23);
             btnAdd.TabIndex = 4;
@@ -79,7 +80,7 @@
             // txtSelected
             // 
             txtSelected.Enabled = false;
-            txtSelected.Location = new Point(12, 366);
+            txtSelected.Location = new Point(12, 376);
             txtSelected.Name = "txtSelected";
             txtSelected.PlaceholderText = "삭제를 위해 선택된 노래";
             txtSelected.ReadOnly = true;
@@ -90,7 +91,7 @@
             // btnDelete
             // 
             btnDelete.Enabled = false;
-            btnDelete.Location = new Point(505, 366);
+            btnDelete.Location = new Point(505, 376);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 23);
             btnDelete.TabIndex = 6;
