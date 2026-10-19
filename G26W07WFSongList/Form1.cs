@@ -56,14 +56,18 @@ namespace G26W07WFSongList {
         private void LoadSongs() {
             listSong.Items.Clear();
 
+            string keyword = txtFilter.Text.Trim();
+
             var songs = _db.Songs
-                //.Where(s => s.Rating >= 4)
+                .Where(s => s.Title.ToLower().Contains(keyword) ||
+                    s.Artist.ToLower().Contains(keyword))
                 .OrderByDescending(s => s.Rating)
                 .ToList();
 
             foreach (var song in songs)
                 listSong.Items.Add(song);
         }
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
 
@@ -142,6 +146,14 @@ namespace G26W07WFSongList {
                 $"https://www.youtube.com/results?search_query={query}") {
                 UseShellExecute = true
             });
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+
+        }
+
+        private void OnFilterChanged(object sender, EventArgs e) {
+            LoadSongs();
         }
 
         // 버튼 관련 이벤트 핸들러는 제거했습니다. 버튼을 처음부터 재구성하려면
