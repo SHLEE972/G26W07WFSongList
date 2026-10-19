@@ -28,6 +28,8 @@
             txtArtist = new TextBox();
             txtRating = new TextBox();
             btnAdd = new Button();
+            txtSelected = new TextBox();
+            btnDelete = new Button();
             SuspendLayout();
             // 
             // listSong
@@ -37,6 +39,7 @@
             listSong.Name = "listSong";
             listSong.Size = new Size(587, 319);
             listSong.TabIndex = 0;
+            listSong.SelectedIndexChanged += OnChanged;
             // 
             // txtTitle
             // 
@@ -65,19 +68,43 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(524, 337);
+            btnAdd.Location = new Point(505, 337);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
+            btnAdd.Size = new Size(94, 23);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "추가";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += OnAdd;
+            // 
+            // txtSelected
+            // 
+            txtSelected.Enabled = false;
+            txtSelected.Location = new Point(12, 366);
+            txtSelected.Name = "txtSelected";
+            txtSelected.PlaceholderText = "삭제를 위해 선택된 노래";
+            txtSelected.ReadOnly = true;
+            txtSelected.Size = new Size(487, 23);
+            txtSelected.TabIndex = 5;
+            txtSelected.TabStop = false;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Enabled = false;
+            btnDelete.Location = new Point(505, 366);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 23);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "삭제";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += OnDelete;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(611, 423);
+            Controls.Add(btnDelete);
+            Controls.Add(txtSelected);
             Controls.Add(btnAdd);
             Controls.Add(txtRating);
             Controls.Add(txtArtist);
@@ -96,6 +123,8 @@
         private TextBox txtArtist;
         private TextBox txtRating;
         private Button btnAdd;
+        private TextBox txtSelected;
+        private Button btnDelete;
         // 버튼 필드는 제거됨
     }
 }
