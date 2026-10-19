@@ -24,6 +24,10 @@
         /// </summary>
         private void InitializeComponent() {
             listSong = new ListBox();
+            txtTitle = new TextBox();
+            txtArtist = new TextBox();
+            txtRating = new TextBox();
+            btnAdd = new Button();
             SuspendLayout();
             // 
             // listSong
@@ -34,19 +38,64 @@
             listSong.Size = new Size(587, 319);
             listSong.TabIndex = 0;
             // 
+            // txtTitle
+            // 
+            txtTitle.Location = new Point(12, 337);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(261, 23);
+            txtTitle.TabIndex = 1;
+            txtTitle.Text = "제목";
+            // 
+            // txtArtist
+            // 
+            txtArtist.Location = new Point(279, 337);
+            txtArtist.Name = "txtArtist";
+            txtArtist.Size = new Size(107, 23);
+            txtArtist.TabIndex = 2;
+            txtArtist.Text = "가수";
+            // 
+            // txtRating
+            // 
+            txtRating.Location = new Point(392, 337);
+            txtRating.MaxLength = 1;
+            txtRating.Name = "txtRating";
+            txtRating.Size = new Size(107, 23);
+            txtRating.TabIndex = 3;
+            txtRating.Text = "평점";
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(524, 337);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "추가";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += OnAdd;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(611, 450);
+            ClientSize = new Size(611, 423);
+            Controls.Add(btnAdd);
+            Controls.Add(txtRating);
+            Controls.Add(txtArtist);
+            Controls.Add(txtTitle);
             Controls.Add(listSong);
             Name = "Form1";
             Text = "애창곡";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ListBox listSong;
+        private TextBox txtTitle;
+        private TextBox txtArtist;
+        private TextBox txtRating;
+        private Button btnAdd;
+        // 버튼 필드는 제거됨
     }
 }
